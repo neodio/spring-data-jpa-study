@@ -5,7 +5,8 @@ spring:
       enabled: true  # H2 Console
       path: /h2-console  # H2 Console Path
   datasource:
-    url: jdbc:h2:mem:datajpa
+    url: jdbc:h2:mem:datajpa # H2(In-Memory)
+#    url: jdbc:h2:~/datajpa   # H2(Embedded)
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -14,6 +15,7 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
 #        show_sql: true
         format_sql: true
   data:
